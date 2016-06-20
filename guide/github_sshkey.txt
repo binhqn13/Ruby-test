@@ -1,0 +1,21 @@
+-check .ssh : ls -al ~/.ssh
+ko co thi tao file .ssh : 
+				ssh-keygen -t rsa -b 4096 -C "email_cua_ban@example.com"
+tiep theo
+
+-them key vao .ssh-key
+				 eval "$(ssh-agent -s)"
+				
+
+- add key 				
+				sh-add ~/.ssh/id_rsa
+
+- copy key vao clipboard cua server 
+			
+				pbcopy < ~/.ssh/id_rsa.pub
+-check link directory .ssh , open rsa.pub and copy text
+-check connect server
+				ssh -T git@github.com
+-if not connect , input 
+				ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+-return input connect --ok--
